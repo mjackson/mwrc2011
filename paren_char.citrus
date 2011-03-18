@@ -1,0 +1,13 @@
+grammar ParenChar
+  rule paren_char
+    ('(' letter:(paren_char | char) ')') {
+      letter.value
+    }
+  end
+
+  rule char
+    [a-zA-Z]
+  end
+end
+
+

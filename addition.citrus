@@ -1,0 +1,14 @@
+grammar Addition
+  rule addition
+    (number ('+' number)+) {
+      captures[:number].inject(0) do |memo, n|
+        memo + n.value
+      end
+    }
+  end
+
+  rule number
+    [0-9] { to_i }
+  end
+end
+
